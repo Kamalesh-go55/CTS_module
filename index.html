@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Event Portal</title>
+</head>
+<body>
+    <!-- Navigation Section -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <section id="home">
+            <!-- Home content -->
+        </section>
+
+        <section id="events">
+            <!-- Events content -->
+        </section>
+
+        <section id="contact">
+            <!-- Contact content -->
+        </section>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <!-- Footer content will go here -->
+    </footer>
+</body>
+</html>
+<style>
+    #welcomeBanner {
+        background-color: #3498db;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .highlight {
+        background-color: #f1c40f;
+        color: #2c3e50;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+</style>
+
+<div id="welcomeBanner">
+    <h2>Welcome to Our Community Portal!</h2>
+    <p>Hello, <span class="highlight">valued resident</span>! We're excited to have you here.</p>
+    <p><span style="color: #e74c3c; font-weight: bold;">✨ Special offer: Register for your first event and get 20% off! ✨</span></p>
+</div>
+<table border="0">
+    <caption>Our Recent Community Events</caption>
+    <tr>
+        <td>
+            <figure>
+                <img src="image_1.png" alt="Diwali Festival" title="Diwali celebration" width="250" height="180">
+                <figcaption>Diwali Festival 2024</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src="image_2.png" alt="Ramadan" title="Ramadan celebration" width="250" height="180">
+                <figcaption>Ramadan 2025</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src="image_3.png" alt="Easter" title="Easter celebration" width="250" height="180">
+                <figcaption>Easter 2025</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+<style>
+    .registration-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .form-control:focus {
+        border-color: #3498db;
+        outline: none;
+        box-shadow: 0 0 5px rgba(52,152,219,0.5);
+    }
+    .btn {
+        background-color: #27ae60;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #2ecc71;
+    }
+    #confirmation {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #d4edda;
+        color: #155724;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="registration-form">
+    <h2>Event Registration</h2>
+    <form id="eventRegistration">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="form-control" required autofocus placeholder="John Smith">
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="eventDate">Event Date</label>
+            <input type="date" id="eventDate" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="eventType">Event Type</label>
+            <select id="eventType" class="form-control" required>
+                <option value="">-- Select an Event --</option>
+                <option value="festival">Community Festival</option>
+                <option value="workshop">Educational Workshop</option>
+                <option value="cleanup">Neighborhood Cleanup</option>
+                <option value="sports">Sports Tournament</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Special Requirements</label>
+            <textarea id="message" class="form-control" rows="4" placeholder="Any accessibility needs or other requirements"></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Register Now</button>
+        
+        <output id="confirmation"></output>
+    </form>
+</div>
+
+<script>
+    document.getElementById('eventRegistration').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const confirmation = document.getElementById('confirmation');
+        confirmation.textContent = `Thank you for registering, ${document.getElementById('name').value}! We've sent confirmation details to your email.`;
+        confirmation.style.display = 'block';
+        this.reset();
+    });
+</script>
+<style>
+    .feedback-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .char-counter {
+        text-align: right;
+        font-size: 0.9em;
+        color: #7f8c8d;
+        margin-top: 5px;
+    }
+    .error {
+        border-color: #e74c3c !important;
+    }
+    .success {
+        border-color: #27ae60 !important;
+    }
+    #feeDisplay {
+        color: #27ae60;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+</style>
+
+<div class="feedback-form">
+    <h2>Event Feedback</h2>
+    <form id="eventFeedback">
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="123-456-7890" onblur="validatePhone(this)">
+            <small>Format: 123-456-7890</small>
+        </div>
+        
+        <div class="form-group">
+            <label for="eventFee">Event Fee</label>
+            <div style="display: flex; align-items: center;">
+                <select id="eventFee" class="form-control" onchange="displayFee(this)">
+                    <option value="">-- Select fee type --</option>
+                    <option value="free">Free Event</option>
+                    <option value="10">$10 Entry Fee</option>
+                    <option value="20">$20 Entry Fee</option>
+                </select>
+                <span id="feeDisplay"></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="feedback">Your Feedback</label>
+            <textarea id="feedback" class="form-control" rows="6" 
+                      placeholder="Tell us about your experience..." 
+                      onkeyup="countChars(this)"></textarea>
+            <div id="charCount" class="char-counter">0/500 characters</div>
+        </div>
+        
+        <button type="button" class="btn" onclick="submitFeedback()">Submit Feedback</button>
+    </form>
+</div>
+
+<script>
+    function validatePhone(input) {
+        const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+        if (input.value && !phoneRegex.test(input.value)) {
+            input.classList.add('error');
+            alert("Please enter a valid phone number in format: 123-456-7890");
+            input.focus();
+        } else if (input.value) {
+            input.classList.remove('error');
+            input.classList.add('success');
+        } else {
+            input.classList.remove('error', 'success');
+        }
+    }
+    
+    function displayFee(select) {
+        const feeDisplay = document.getElementById('feeDisplay');
+        if (select.value === 'free') {
+            feeDisplay.textContent = "This event was free";
+        } else if (select.value) {
+            feeDisplay.textContent = `Paid $${select.value} for this event`;
+        } else {
+            feeDisplay.textContent = "";
+        }
+    }
+    
+    function countChars(textarea) {
+        const charCount = document.getElementById('charCount');
+        charCount.textContent = `${textarea.value.length}/500 characters`;
+        
+        if (textarea.value.length > 400) {
+            charCount.style.color = '#e74c3c';
+        } else if (textarea.value.length > 300) {
+            charCount.style.color = '#f39c12';
+        } else {
+            charCount.style.color = '#7f8c8d';
+        }
+    }
+    
+    function submitFeedback() {
+        const feedback = document.getElementById('feedback').value;
+        if (feedback.length < 20) {
+            alert("Please provide more detailed feedback (at least 20 characters)");
+            return;
+        }
+        
+        alert("Thank you for your valuable feedback!");
+        document.getElementById('eventFeedback').reset();
+        document.getElementById('feeDisplay').textContent = "";
+        document.getElementById('charCount').textContent = "0/500 characters";
+        document.getElementById('charCount').style.color = "#7f8c8d";
+    }
+</script>
+<style>
+    .video-container {
+        margin: 40px 0;
+        text-align: center;
+    }
+    #eventVideo {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    #videoStatus {
+        margin-top: 15px;
+        font-style: italic;
+        color: #3498db;
+        font-size: 1.1em;
+    }
+</style>
+
+<div class="video-container">
+    <h2>Upcoming Event Preview</h2>
+    <video id="eventVideo" width="800" controls
+           oncanplay="videoReady()"
+           onbeforeunload="return warnUnfinishedForm()">
+        <source src="videos/event-promo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div id="videoStatus">Loading video, please wait...</div>
+</div>
+
+<script>
+    function videoReady() {
+        document.getElementById('videoStatus').textContent = "Video is ready to play! Click the play button above.";
+    }
+    
+    function warnUnfinishedForm() {
+        const feedbackForm = document.getElementById('eventFeedback');
+        if (feedbackForm && document.getElementById('feedback').value) {
+            return "You have unsaved feedback. Are you sure you want to leave?";
+        }
+    }
+</script>
+<style>
+    .preferences {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 25px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .pref-message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 4px;
+        display: none;
+    }
+    .success-message {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    .info-message {
+        background-color: #d1ecf1;
+        color: #0c5460;
+    }
+    #clearPrefs {
+        background-color: #e74c3c;
+    }
+    #clearPrefs:hover {
+        background-color: #c0392b;
+    }
+</style>
+
+<div class="preferences">
+    <h2>Your Preferences</h2>
+    <div class="form-group">
+        <label for="preferredEvent">Preferred Event Type</label>
+        <select id="preferredEvent" class="form-control" onchange="savePreference()">
+            <option value="">-- Select your preference --</option>
+            <option value="festival">Festivals</option>
+            <option value="workshop">Workshops</option>
+            <option value="cleanup">Cleanups</option>
+            <option value="sports">Sports Events</option>
+        </select>
+    </div>
+    
+    <button id="clearPrefs" class="btn" onclick="clearPreferences()">Clear All Preferences</button>
+    
+    <div id="prefMessage" class="pref-message"></div>
+</div>
+
+<script>
+    // Load saved preference when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const preferredEvent = localStorage.getItem('preferredEvent');
+        if (preferredEvent) {
+            document.getElementById('preferredEvent').value = preferredEvent;
+            showMessage(`Welcome back! We've loaded your preferred event type: ${getEventName(preferredEvent)}`, 'success');
+        }
+    });
+    
+    function savePreference() {
+        const select = document.getElementById('preferredEvent');
+        const selectedEvent = select.value;
+        
+        if (selectedEvent) {
+            localStorage.setItem('preferredEvent', selectedEvent);
+            showMessage(`Preference saved! You prefer ${getEventName(selectedEvent)} events.`, 'success');
+        } else {
+            showMessage("Please select an event type to save your preference", 'info');
+        }
+    }
+    
+    function clearPreferences() {
+        localStorage.removeItem('preferredEvent');
+        document.getElementById('preferredEvent').value = '';
+        showMessage("All preferences have been cleared.", 'success');
+    }
+    
+    function getEventName(value) {
+        const options = {
+            'festival': 'Festival',
+            'workshop': 'Workshop',
+            'cleanup': 'Cleanup',
+            'sports': 'Sports'
+        };
+        return options[value] || 'Event';
+    }
+    
+    function showMessage(text, type) {
+        const messageDiv = document.getElementById('prefMessage');
+        messageDiv.textContent = text;
+        messageDiv.className = `pref-message ${type}-message`;
+        messageDiv.style.display = 'block';
+        
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 5000);
+    }
+</script>
+<!-- Add this to the head section -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+    .geolocation {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 25px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #locationInfo {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 4px;
+        background-color: #e8f5e9;
+    }
+    .location-error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    #map {
+        height: 400px;
+        margin-top: 20px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+    .event-marker {
+        background-color: #3498db;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+    .user-marker {
+        background-color: #e74c3c;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+    .event-popup {
+        font-family: Arial, sans-serif;
+    }
+    .event-popup h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    .event-popup .register-btn {
+        display: inline-block;
+        background-color: #27ae60;
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="geolocation">
+    <h2>Find Events Near You</h2>
+    <button class="btn" onclick="findNearbyEvents()">
+        <span id="locationIcon">📍</span> Find Nearby Events
+    </button>
+    
+    <div id="locationInfo">
+        <p>Click the button above to find events near your location.</p>
+    </div>
+    
+    <div id="map"></div>
+</div>
+
+<script>
+    let map;
+    let userMarker;
+    let eventMarkers = [];
+    
+    // Sample event data (in a real app, this would come from an API)
+    const sampleEvents = [
+        {
+            id: 1,
+            name: "Community Summer Festival",
+            type: "festival",
+            date: "2023-07-15",
+            time: "10:00 AM - 8:00 PM",
+            location: "Central Park",
+            lat: 40.7828,
+            lng: -73.9653,
+            description: "Annual summer festival with food, music, and activities for all ages."
+        },
+        {
+            id: 2,
+            name: "Neighborhood Cleanup",
+            type: "cleanup",
+            date: "2023-07-22",
+            time: "9:00 AM - 12:00 PM",
+            location: "Main Street Area",
+            lat: 40.7855,
+            lng: -73.9552,
+            description: "Help keep our neighborhood clean! Gloves and bags provided."
+        },
+        {
+            id: 3,
+            name: "Gardening Workshop",
+            type: "workshop",
+            date: "2023-07-29",
+            time: "2:00 PM - 4:00 PM",
+            location: "Community Garden",
+            lat: 40.7792,
+            lng: -73.9628,
+            description: "Learn urban gardening techniques from local experts."
+        }
+    ];
+
+    function findNearbyEvents() {
+        const locationInfo = document.getElementById('locationInfo');
+        locationInfo.innerHTML = "<p>Locating your position...</p>";
+        locationInfo.className = "";
+        
+        if (!navigator.geolocation) {
+            locationInfo.innerHTML = '<p class="location-error">Geolocation is not supported by your browser</p>';
+            return;
+        }
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        };
+
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+                
+                locationInfo.innerHTML = `
+                    <p>📍 Found your location!</p>
+                    <p>Showing events within 2 miles of your position.</p>
+                `;
+                
+                // Initialize map if not already done
+                if (!map) {
+                    initMap(userLat, userLng);
+                } else {
+                    map.setView([userLat, userLng], 15);
+                }
+                
+                // Update user marker
+                if (userMarker) {
+                    userMarker.setLatLng([userLat, userLng]);
+                } else {
+                    userMarker = L.marker([userLat, userLng], {
+                        icon: L.divIcon({
+                            className: 'user-marker-icon',
+                            html: '<div class="user-marker"></div>',
+                            iconSize: [20, 20]
+                        })
+                    }).addTo(map);
+                    userMarker.bindPopup("<b>Your Location</b>").openPopup();
+                }
+                
+                // Clear previous event markers
+                eventMarkers.forEach(marker => map.removeLayer(marker));
+                eventMarkers = [];
+                
+                // Add nearby events to map
+                sampleEvents.forEach(event => {
+                    const distance = calculateDistance(
+                        userLat, userLng, 
+                        event.lat, event.lng
+                    );
+                    
+                    // Only show events within 2 miles (adjust as needed)
+                    if (distance <= 2) {
+                        const marker = L.marker([event.lat, event.lng], {
+                            icon: L.divIcon({
+                                className: 'event-marker-icon',
+                                html: '<div class="event-marker"></div>',
+                                iconSize: [20, 20]
+                            })
+                        }).addTo(map);
+                        
+                        const popupContent = `
+                            <div class="event-popup">
+                                <h3>${event.name}</h3>
+                                <p><strong>When:</strong> ${event.date} at ${event.time}</p>
+                                <p><strong>Where:</strong> ${event.location}</p>
+                                <p>${event.description}</p>
+                                <p><strong>Distance:</strong> ${distance.toFixed(1)} miles</p>
+                                <a href="#events" class="register-btn">Register</a>
+                            </div>
+                        `;
+                        
+                        marker.bindPopup(popupContent);
+                        eventMarkers.push(marker);
+                    }
+                });
+                
+                // If no events found
+                if (eventMarkers.length === 0) {
+                    locationInfo.innerHTML += '<p>No events found nearby. Check our full event list above.</p>';
+                }
+            },
+            function(error) {
+                let message = "Error getting your location: ";
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        message += "You denied the request for geolocation.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        message += "Location information is unavailable.";
+                        break;
+                    case error.TIMEOUT:
+                        message += "The request to get your location timed out.";
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        message += "An unknown error occurred.";
+                        break;
+                }
+                locationInfo.innerHTML = `<p class="location-error">${message}</p>`;
+            },
+            options
+        );
+    }
+    
+    function initMap(lat, lng) {
+        map = L.map('map').setView([lat, lng], 15);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    }
+    
+    // Calculate distance between two coordinates in miles
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 3958.8; // Radius of the Earth in miles
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = 
+            Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return R * c;
+    }
+</script>
