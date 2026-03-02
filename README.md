@@ -1,2 +1,3 @@
 # CTS_module
-It's the repository to save the given test modules for the CTS assessment
+
+Well, it is project for the CTS module. Where the HTML,CSS, and plugins are used to create the fancy website. Do not waste your time, no useful things could be found on this repo. Make your time useful. Thanks
